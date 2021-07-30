@@ -55,7 +55,7 @@ email: pastanerd0416@gmail.com
 authors:
   chaeeon-lim:
     name: Chaeeon Lim
-    bio: 99 failed, 100 trials. Find a problem, define it, and solve it.
+    bio: Find a problem, define it, and solve it.
     external-image: true
     picture: https://media-exp1.licdn.com/dms/image/C5603AQHCLmOXhPaTIw/profile-displayphoto-shrink_200_200/0/1516997380739?e=1632355200&v=beta&t=I1EwkCDYeNZgqeIC5imDVH6WprhIUh_UUysEz3Xd9Jw
     linkedin: https://www.linkedin.com/in/chae-eon-lim-94678a100/
@@ -74,7 +74,7 @@ width: normal
 
 # if you do/don't need pagination, toggle 'enabled' between true/false below
 pagination:
-  enabled: true
+  enabled: false
   sort_reverse: true # display recent posts first
   title: ":title" # Changing this will mess up the header display logic
   per_page: 5
