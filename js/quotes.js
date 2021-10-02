@@ -48,3 +48,12 @@ const quotes = [
   
   quote.innerText = todaysQuote.quote;
   author.innerText = todaysQuote.author;
+
+  quote.classList.add("animation-init");
+setTimeout(function () {
+  quote.classList.add("animation-fade");
+}, 30);
+author.classList.add("animation-init");
+setTimeout(function () {
+  author.classList.add("animation-fade");
+}, 30);

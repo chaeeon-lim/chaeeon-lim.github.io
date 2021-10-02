@@ -12,33 +12,54 @@
     <div class="container">
         <div class="header">
             <div id="weather">
-                <span>Loading</span>
-                <span>...</span>
+                <img class="weather-icon"/>
+                <div class="weather-main">
+                    <span>Loading</span>
+                    <span>...</span>
+                </div>
+                <div class="weather-temp">
+
+                </div>
             </div>
         </div>
         <div class="dashboard">
-            <h2 id="clock">00:00</h2>
-            <!-- <div> -->
-            <form id="login-form" class="hidden">
-                <input 
-                required 
-                maxlength="15" 
-                type="text" 
-                placeholder="What is your name?"
-                id="name"
-                name="name"
-                class="form__field"
-                />
-                <label for='name', class="form__label">What is your name?</label>
-                <!-- <input type="submit" value="Log In"/> -->
-            </form>
-            <h1 id="greeting" class="hidden"></h1>
-            <!-- </div> -->
-            <form id="todo-form">
-                <input id='todo' class="form__field" type="text" placeholder="Write a to do and press enter" required/>
-                <label for='todo' class="form__label">Write a to do and press enter</label>
-            </form>
-            <ul id="todo-list"></ul>
+            <div class="clock">
+                <span id="clock"></span>
+            </div>
+            <div class="login">
+                <form id="login-form" class="hidden">
+                    <label for='name', class="inp">
+                        <input 
+                            required 
+                            maxlength="15" 
+                            type="text" 
+                            placeholder="&nbsp;"
+                            id="name"
+                            name="name"
+                            class="form__field"
+                        />
+                        <span class="label">What is your name?</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                    <!-- <input type="submit" value="Log In"/> -->
+                </form>
+                <h1 id="greeting" class="hidden"></h1>
+            </div>
+            <div class="todo">
+                <form id="todo-form">
+                    <label for='todo' class="inp">
+                        <input 
+                            required
+                            maxlength="50"
+                            id='todo' class="form__field" type="text" placeholder="&nbsp;" />
+                        <span class="label">Write a to do and press enter</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                    
+                    
+                </form>
+                <ul id="todo-list"></ul>
+            </div>
         </div>
         <div class="footer">
             <div id="quote">
@@ -47,7 +68,6 @@
             </div>
         </div>
     </div>
-    <a href="https://nomadcoders.co">Go to courses</a>
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>

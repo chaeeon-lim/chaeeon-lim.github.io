@@ -1,4 +1,4 @@
-const clock = document.querySelector("h2#clock");
+const clock = document.querySelector("span#clock");
 
 function getClock() {
     const date = new Date();
@@ -9,6 +9,11 @@ function getClock() {
     // console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`)
 }
 getClock();
+
+clock.classList.add("animation-init");
+setTimeout(function () {
+    clock.classList.add("animation-fade");
+}, 30);
 setInterval(getClock, 1000);
 // setInterval(sayHello, 1000);
 // setTimeout(sayHello, 1000);

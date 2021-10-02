@@ -24,6 +24,7 @@ function paintToDo(newTodo) {
     li.id = newTodo['id'];
     const span = document.createElement("span");
     span.innerText = newTodo['text'];
+    span.classList.add("item-title")
     const button = document.createElement("button");
     button.innerText = "❌"
     button.addEventListener("click", deleteToDo)
@@ -33,6 +34,10 @@ function paintToDo(newTodo) {
     li.appendChild(span);
     li.appendChild(button);
     toDoList.appendChild(li);
+    li.classList.add("animation-init");
+    setTimeout(function () {
+        li.classList.add("animation-fade");
+    }, 30);
 }
 
 function handleToDoSubmit(event) {
@@ -63,3 +68,9 @@ if (savedToDos) {
     toDos = parsedToDos;
     // toDos.join(parsedToDos)
 }
+
+
+toDoForm.classList.add("animation-init");
+setTimeout(function () {
+    toDoForm.classList.add("animation-fade");
+}, 30);
