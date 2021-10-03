@@ -1,5 +1,5 @@
 :root {
-    color:aliceblue;
+    color:#edf2fb;
     font-family: 'Noto Sans Display', sans-serif;
 }
 /* 
@@ -104,11 +104,20 @@ div #background {
 .clock {
     font-size:800%;
     font-weight:900;
+    text-shadow: 5px 5px rgba(136, 136, 136, 0.5), 10px 10px rgb(48, 48, 48, 0.5);
     /* margin-bottom: 1em; */
 }
 
 .dashboard #greeting {
     text-align: center;
+    text-shadow: 2px 2px rgba(136, 136, 136, 0.5), 4px 4px rgb(48, 48, 48, 0.5);
+}
+
+#greeting span:first-child {
+  /* color:palevioletred; */
+  text-shadow: #780000 1px 0 10px, 2px 2px rgba(136, 136, 136, 0.5), 4px 4px rgb(48, 48, 48, 0.5);
+
+  /* border-color:white; */
 }
 
 /* input field */
@@ -260,6 +269,10 @@ box-shadow: inset 0px 0px 5px white;
     "chk item del";
     grid-template-columns: 3vw auto 3vw;
     align-items:center;
+}
+
+li:hover {
+  background-color: #7b8cb14b;
 }
 
 /* .todo #todo-list  */

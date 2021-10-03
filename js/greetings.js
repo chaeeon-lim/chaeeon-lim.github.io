@@ -19,8 +19,10 @@ function onLoginSubmit(event) {
 function getHelloMsg(hour){
     if (hour >= 6 && hour < 12){
         return "Good Morning"
-    } else if (hour >= 12 && hour < 20){
+    } else if (hour >= 12 && hour < 18){
         return "Good afternoon"
+    } else if (hour >= 18 && hour <= 23){
+        return "Good evening"
     } else {
         return "Good night"
     }
@@ -29,7 +31,10 @@ function getHelloMsg(hour){
 
 function paintGreeting(username){
     const curTime = new Date()
-    greeting.innerText = `${getHelloMsg(curTime.getHours())} ${username}`
+    const quote = document.createElement("span");
+    quote.innerText = username;
+    greeting.innerText = `${getHelloMsg(curTime.getHours())} `;
+    greeting.appendChild(quote);
     greeting.classList.add("animation-init");
     setTimeout(function () {
         greeting.classList.add("animation-fade");

@@ -1,5 +1,14 @@
 const images = [  
-    "colorful-g2f8f7235d_1920.jpg", "nature-ga9acd2864_1920.jpg", "ocean-g3df089a45_1920.jpg"];
+    "astronomy-g90d410c6f_1920.jpg",
+    "jellyfish-gcb6374543_1920.jpg",
+    "lion-gea6b70c99_1920.jpg",
+    "dice-ga07b915b5_1920.jpg",
+    "adventure-gcc5839f81_1920.jpg",
+    "blue-g51cd0e104_1920.jpg",
+    "mountains-g3ceb19a85_1920.jpg",
+    "tenor-saxophone-gf0695a924_1920.jpg",
+    "nature-ga9acd2864_1920.jpg", 
+    "ocean-g3df089a45_1920.jpg"];
 
 const chosenImage = images[Math.floor(Math.random()*images.length)];
 
