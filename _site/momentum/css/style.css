@@ -1,0 +1,331 @@
+:root {
+    color:#edf2fb;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+/* 
+body {
+} */
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color:rgba(0, 0, 0, 1);
+}
+
+.full-screen-div {
+    width: 100vw;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+.background-item {
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: transform var(--a-show-full-duration) var(--a-show-full-curve);
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    display: grid;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows:10% auto 10%;
+    grid-gap:10px;
+    grid-template-areas:
+    " header header header "
+    "    .    main     .   "
+    " footer footer footer ";
+    transition: opacity .3s var(--a-curve);
+}
+
+.header{
+    grid-area: header;
+    justify-self: end;
+    padding-right: 10ex;
+}
+
+.dashboard {
+    display: grid;
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+    row-gap: 1em;
+}
+
+.footer {
+    grid-area: footer;
+    place-self: center;
+}
+
+div #background {
+}
+/* ITEMS */
+
+#weather {
+    display: grid;
+    grid-template-areas:
+    " icon main "
+    " icon temp ";
+}
+
+.weather-icon {
+    grid-area: icon;
+}
+
+.weather-temp {
+    grid-area: temp;
+}
+
+.weather-main {
+    grid-area: main;
+}
+
+/* clock */
+.clock {
+    font-size:800%;
+    font-weight:900;
+    text-shadow: 5px 5px rgba(136, 136, 136, 0.5), 10px 10px rgb(48, 48, 48, 0.5);
+    /* margin-bottom: 1em; */
+}
+
+.dashboard #greeting {
+    text-align: center;
+    text-shadow: 2px 2px rgba(136, 136, 136, 0.5), 4px 4px rgb(48, 48, 48, 0.5);
+}
+
+#greeting span:first-child {
+  /* color:palevioletred; */
+  text-shadow: #780000 1px 0 10px, 2px 2px rgba(136, 136, 136, 0.5), 4px 4px rgb(48, 48, 48, 0.5);
+
+  /* border-color:white; */
+}
+
+/* input field */
+
+.inp {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .inp .label {
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    font-size: 16px;
+    /* color: rgba(255, 255, 255, 0.5); */
+    font-weight: 500;
+    transform-origin: 0 0;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  .inp .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .inp input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    /* padding: 16px 12px 0 12px; */
+    height: 56px;
+    font-size: 16px;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0.02);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    color: rgb(255, 255, 255);
+    transition: all 0.15s ease;
+  }
+  .inp input:hover {
+    background: rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5);
+  }
+  .inp input:not(:-moz-placeholder-shown) + .label {
+    color: rgba(255, 255, 255, 0.5);
+    transform: translate3d(0, -12px, 0) scale(0.75);
+  }
+  .inp input:not(:-ms-input-placeholder) + .label {
+    color: rgba(255, 255, 255, 0.5);
+    transform: translate3d(0, -12px, 0) scale(0.75);
+  }
+  .inp input:not(:placeholder-shown) + .label {
+    color: rgba(255, 255, 255, 0.5);
+    transform: translate3d(0, -24px, 0) scale(0.75);
+  }
+  .inp input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    box-shadow: inset 0 -2px 0 #000000;
+  }
+  .inp input:focus + .label {
+    color: #ffffff00;
+    transform: translate3d(0, -12px, 0) scale(0.75);
+  }
+  .inp input:focus + .label + .focus-bg {
+    transform: scaleX(1);
+    transition: all 0.1s ease;
+  }
+
+/* quotes */
+#quote span:first-child {
+    font-weight: 900;
+    font-style: italic;
+}
+#quote span:first-child:before {
+    content: ">>  ";
+}
+#quote span:first-child:after {
+    content: "  <<";
+}
+#quote span:last-child {
+    font-weight: 400;
+    padding-left: 2vw;
+}
+#quote span:last-child:before {
+    content: " - ";
+}
+
+/* list */
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+    background-color: transparent;
+    justify-self: center;
+    transition: all 0.2s ease;
+}
+ol, ul:hover {
+    background-color: #2f35424b;
+    padding-top: 12px;
+    /* padding-right: 12px; */
+
+}
+input[type=checkbox]:checked~ .item-title {
+  text-decoration: line-through;
+  color:lightslategrey
+}
+
+  input[type=checkbox] {
+      justify-self: center;
+  }
+
+.todo #todo-list {
+    height: 30vh;
+    overflow-y: auto;
+}
+.todo #todo-list::-webkit-scrollbar {
+width: 10px;
+}
+.todo #todo-list::-webkit-scrollbar-thumb {
+background-color: #2f3542;
+border-radius: 10px;
+background-clip: padding-box;
+border: 2px solid transparent;
+}
+.todo #todo-list::-webkit-scrollbar-track {
+background-color: grey;
+border-radius: 10px;
+box-shadow: inset 0px 0px 5px white;
+}
+
+.todo #todo-list li{
+    display: grid;
+    width: 100%;
+    grid-template-areas: 
+    "chk item del";
+    grid-template-columns: 3vw auto 3vw;
+    align-items:center;
+}
+
+li:hover {
+  background-color: #7b8cb14b;
+}
+
+/* .todo #todo-list  */
+
+/* button */
+.todo #todo-list button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 0.35rem 0.5rem;
+  
+    /* font-size: 1rem; */
+    text-align: center;
+    text-decoration: none;
+  
+    width: auto;
+  
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-color: transparent;
+    cursor: pointer;
+  
+    transition: 0.5s;
+  }
+
+.todo #todo-list button:active,
+.todo #todo-list button:hover,
+.todo #todo-list button:focus {
+  background: var(--button-hover-bg-color);
+  outline: 0;
+}
+.todo #todo-list button:disabled {
+  opacity: 0.5;
+}
+
+.animation-init {
+    opacity: 0;
+  }
+  
+.animation-fade {
+opacity: 1;
+transition: all 0.5s;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,200;0,400;0,900;1,200;1,400;1,900&display=swap');
+/* body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  } */
